@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>View Products</title>
+    </head>
+
+    <body>
+
+        <h1>List of Products</h1>
+
+        {% for product in products %}
+        <div>
+            <h2>{{ product.name }}</h2>
+            <p>Description: {{ product.description }}</p>
+            <p>Price: {{ product.price }}</p>
+            <p>Quantity: {{ product.quantity }}</p>
+            <p>Added Date: {{ product.added_date }}</p>
+            {% if product.photo %}
+            <img src="{{ product.photo.url }}" alt="{{ product.name }}">
+            {% else %}
+            <p>No photo available</p>
+            {% endif %}
+            <hr>
+        </div>
+        {% endfor %}
+
+    </body>
+
+</html>
