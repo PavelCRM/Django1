@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>View Order</title>
+    </head>
+
+    <body>
+        <h1>View Order {{ order.id }}</h1>
+        <p>Client: {{ order.client.name }} - Total Amount: {{ order.total_amount }} - Order Date: {{ order.order_date }}
+        </p>
+        <ul>
+            {% for product in order.products.all %}
+            <li>{{ product.name }} - {{ product.description }} - {{ product.price }} - {{ product.quantity }} - {{
+                product.added_date }}</li>
+            {% endfor %}
+        </ul>
+    </body>
+
+</html>
